@@ -4,8 +4,13 @@ frontend:
     preBuild:
       commands: []
     build:
-      commands: []
+      commands:
+        - mkdir -p dist
+        - cp index.html dist/
+        # Copy common static folders if you add them later; harmless if missing
+        - for d in assets css js images img static public; do [ -d "$d" ] && cp -R "$d" dist/; done
   artifacts:
+    baseDirectory: dist
     files:
       - '**/*'
   cache:
