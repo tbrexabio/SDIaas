@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SDIaaS by Brexa | Scientific Data Infrastructure-as-a-Service</title>
+  <meta name="description" content="Regulatory-grade, AI-ready scientific data infrastructure for biotech, pharma, and medtech. 21 CFR Part 11 & GxP by design." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SDIaaS by Brexa | Scientific Data Infrastructure-as-a-Service" />
+  <meta property="og:description" content="Unify lab data streams, enforce compliance, and unlock AI with BrexaSDIaaS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sdiaas.io" />
+
+  <!-- Brand palette (tBrexa): blue #0844A4, green #10B981, orange #DC4C18, dark #0B1320 -->
+  <style>
+    :root{
+      --blue:#0844A4; --green:#10B981; --orange:#DC4C18; --ink:#0B1320; --muted:#5B6B7A; --bg:#D4F1F4; --card:#FFFFFF;
+      --ring: 0 0 0 3px rgba(8,68,164,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:linear-gradient(135deg,#0B1320 0%, #0f1f3e 100%);} 
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(12px);background:rgba(11,19,32,.6);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:800;letter-spacing:.3px;color:#fff;text-decoration:none}
+    .nav-links{display:flex;gap:22px}
+    .nav-links a{color:#e6eefc;text-decoration:none;font-weight:600;opacity:.9}
+    .nav-links a:hover,.nav-links a:focus{opacity:1;outline:none;text-decoration:underline;text-underline-offset:4px}
+
+    /* Hero */
+    .hero{color:#fff;padding:88px 0 56px}
+    .hero h1{font-size:clamp(28px,5.2vw,56px);line-height:1.06;margin:12px 0 8px}
+    .hero p{font-size:clamp(16px,2.2vw,19px);opacity:.95;max-width:760px}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(16,185,129,.12);color:#bff5e3;border:1px solid rgba(16,185,129,.3);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
+
+    .cta{margin-top:26px;display:grid;gap:14px}
+    .panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px}
+    form.lead{display:grid;grid-template-columns:1fr 1fr auto;gap:10px}
+    .field{position:relative}
+    .field input{width:100%;padding:14px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.95);font-size:15px}
+    .field label{position:absolute;left:12px;top:6px;font-size:11px;color:#415369}
+    .btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font-weight:800;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--orange),#f08b55);color:#fff}
+    .btn-primary:focus{box-shadow:var(--ring)}
+    .legal{font-size:12px;color:#d4d9e5;display:flex;gap:8px;align-items:flex-start}
+    .legal input{margin-top:3px}
+    .success,.error{display:none;margin-top:10px;font-size:14px}
+    .success{color:#a7f3d0}
+    .error{color:#fecaca}
+
+    /* Section wrappers */
+    section{scroll-margin-top:84px}
+
+    /* Feature grid */
+    .section{background:var(--bg);padding:72px 0}
+    .section.dark{background:linear-gradient(135deg,#08204d 0%, #0B1320 100%);color:#e6eefc}
+    h2.section-title{font-size:clamp(22px,3.5vw,32px);margin:0 0 10px}
+    p.section-kicker{color:var(--muted);margin:0 0 28px}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .card{grid-column:span 6;background:var(--card);border:1px solid #e5eaf2;border-radius:16px;padding:20px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:#415369}
+    .icon{height:40px;width:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),#2a68e6);color:#fff;font-weight:900;margin-bottom:8px}
+
+    /* How-it-works timeline */
+    .steps{display:grid;gap:16px}
+    .step{display:flex;gap:14px;align-items:flex-start}
+    .step .dot{height:28px;width:28px;border-radius:999px;background:var(--green);color:#072b22;display:grid;place-items:center;font-weight:800}
+
+    /* Stats section */
+    .stats{background:linear-gradient(135deg, #2c3e50, #3498db);color:white;padding:80px 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:40px;text-align:center}
+    .stat-item h3{font-size:3rem;font-weight:800;margin-bottom:10px;background:linear-gradient(45deg, #f39c12, #e74c3c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .stat-item p{font-size:1.1rem;opacity:.9}
+
+    /* Footer */
+    footer{background:#0B1320;color:#cbd5e1}
+    .foot-wrap{padding:32px 0}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+    .foot-grid a{color:#9db4d6;text-decoration:none}
+    .foot-grid a:hover{text-decoration:underline}
+    .copyright{border-top:1px solid rgba(255,255,255,.08);padding:18px 0;color:#93a4ba;font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      form.lead{grid-template-columns:1fr;}
+      .card{grid-column:span 12}
+      .foot-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Main">
+        <a class="brand" href="#top">SDIaaS by Brexa</a>
+        <div class="nav-links" role="navigation">
+          <a href="#solutions">Solutions</a>
+          <a href="#how">How it works</a>
+          <a href="#compliance">Compliance</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="hero">
+    <div class="container">
+      <div class="badge" aria-label="GxP ready">
+        <span>21 CFR Part 11 • ALCOA+ • GxP</span>
+      </div>
+      <h1>Regulatory-first. Science-native. AI-ready.</h1>
+      <p>Unify instruments, ELNs/LIMS, and process data into an AI-ready backbone with audit trails, role-based access, and immutable provenance managed by tBrexa Bio’s life-sciences team.</p>
+
+      <div class="cta panel" aria-labelledby="waitlist">
+        <form id="leadForm" class="lead" action="https://formspree.io/f/mnnbaarq" method="POST">
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" placeholder="name@company.com" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Your organization" required />
+          </div>
+          <button class="btn btn-primary" type="submit" id="submitBtn">Join the waitlist</button>
+        </form>
+        <div class="legal" id="consent">
+          <input id="consentChk" type="checkbox" required />
+          <label for="consentChk">I agree to receive emails about SDIaaS by Brexa and understand I can unsubscribe at any time. We respect your data and keep it private.</label>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="section">
+    <div class="container">
+      <h2 class="section-title">Built for life-sciences excellence</h2>
+      <p class="section-kicker">Deploy fast, stay compliant, and unlock AI across R&amp;D and manufacturing.</p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">✓</div>
+          <h3>Regulatory by design</h3>
+          <p>21 CFR Part 11, Annex 11, and ALCOA+ baked into identities, signatures, audit trails, time-sync, and immutable logs from day one.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>Lab-native integration</h3>
+          <p>Adapters for 200+ instruments and ELN/LIMS connectors (CSV, OPC-UA, HL7/FHIR, REST, MQTT). Keep workflows; gain a single source of truth.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">🤖</div>
+          <h3>AI-ready architecture</h3>
+          <p>Harmonized, versioned datasets with lineage for model training, predictive QC, and process optimization—without compromising compliance.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">🔒</div>
+          <h3>Enterprise security</h3>
+          <p>RBAC/ABAC, SSO/SAML/OIDC, encryption at rest &amp; in transit, network isolation, key rotation, and least-privilege defaults for GxP environments.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3>Real-time dashboards</h3>
+          <p>Ops and quality dashboards for batch genealogy, deviations, CPP/CQA trends, and release readiness—all exportable to eQMS.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">🛠️</div>
+          <h3>Managed service</h3>
+          <p>24/7 monitoring, validated change control, and white-glove onboarding by tBrexa’s data and regulatory team.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>200+</h3>
+          <p>Supported Instruments</p>
+        </div>
+        <div class="stat-item">
+          <h3>99.9%</h3>
+          <p>Uptime Guarantee</p>
+        </div>
+        <div class="stat-item">
+          <h3>60-80%</h3>
+          <p>Time Savings on Data Tasks</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Regulatory Compliant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section dark">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step"><div class="dot">1</div><div><strong>Discovery &amp; fit.</strong> Map instruments, data flows, and compliance scope; define success metrics.</div></div>
+        <div class="step"><div class="dot">2</div><div><strong>Pilot in 4–6 weeks.</strong> Stand up a sandbox with 2–3 priority instruments and a lightweight data model.</div></div>
+        <div class="step"><div class="dot">3</div><div><strong>Validated rollout.</strong> Migrate to production with IQ/OQ/PQ, e-signatures, and training records.</div></div>
+        <div class="step"><div class="dot">4</div><div><strong>Scale &amp; AI.</strong> Expand adapters, enable dashboards, and graduate to ML-assisted release analytics.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section id="compliance" class="section">
+    <div class="container">
+      <h2 class="section-title">Compliance foundation</h2>
+      <div class="grid">
+        <article class="card"><h3>ALCOA+</h3><p>Attributable, Legible, Contemporaneous, Original, Accurate + Complete, Consistent, Enduring, Available.</p></article>
+        <article class="card"><h3>Audit trails</h3><p>Immutable, time-synced events for create/update/delete, signatures, and data exports with reviewer notes.</p></article>
+        <article class="card"><h3>E-signatures</h3><p>21 CFR Part 11-compliant signatures with multi-factor identity binding and reason capture.</p></article>
+        <article class="card"><h3>Validation</h3><p>Risk-based validation templates (URS, FS, DS, IQ/OQ/PQ) and change-control playbooks.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container foot-wrap">
+      <div class="foot-grid">
+        <div>
+          <p style="margin:12px 0 0">tBrexa Bio’s SDIaaS is the regulatory-grade nervous system your data has been waiting for.</p>
+          <p style="margin:10px 0 0"><strong>Email:</strong> <a href="mailto:hello@sdiaas.io">hello@sdiaas.io</a></p>
+        </div>
+        <div>
+          <h4>Solutions</h4>
+          <ul style="list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px">
+            <li><a href="#solutions">Custom Implementation</a></li>
+            <li><a href="#how">Managed Platform</a></li>
+            <li><a href="https://tbrexa.com" target="_blank" rel="noopener">Hybrid Partnership</a></li>
+            <li><a href="https://regsci.com" target="_blank" rel="noopener">Regulatory Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Industries</h4>
+           <ul style="list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px">
+            <li>Biotechnology</li>
+            <li>Pharmaceuticals</li>
+            <li>Medical Devices</li>
+            <li>Diagnostics</li>
+          <ul style="list-style:none;padding:0;margin:8
